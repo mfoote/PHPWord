@@ -396,6 +396,15 @@ class TemplateProcessor
 
         $this->zipClass->addFromString($this->getMainPartName(), $this->tempDocumentMainPart);
 
+        if($this->_rels!="")
+        {
+            $this->zipClass->addFromString('word/_rels/document.xml.rels', $this->_rels);
+        }
+        if($this->_types!="")
+        {
+            $this->zipClass->addFromString('[Content_Types].xml', $this->_types);
+        }
+        
         foreach ($this->tempDocumentFooters as $index => $xml) {
             $this->zipClass->addFromString($this->getFooterName($index), $xml);
         }
