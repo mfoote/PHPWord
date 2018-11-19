@@ -654,11 +654,11 @@ class TemplateProcessor
         $this->_types = str_replace('</Types>', $toAddType, $this->_types) . '</Types>';
         $this->_rels = str_replace('</Relationships>', $toAdd, $this->_rels) . '</Relationships>';
     }
-    function limpiarString($str) {
+    protected function limpiarString($str) {
         return str_replace(
                 array('&', '<', '>', "\n"), 
                 array('&amp;', '&lt;', '&gt;', "\n" . '<w:br/>'), 
                 $str
         );
-}
+    }
 }
