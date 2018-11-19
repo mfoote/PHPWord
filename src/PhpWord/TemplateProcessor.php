@@ -72,6 +72,7 @@ class TemplateProcessor
      */
     public function __construct($documentTemplate)
     {
+        $this->_countRels=100; //start id for relationship between image and document.xml
         // Temporary document filename initialization
         $this->tempDocumentFilename = tempnam(Settings::getTempDir(), 'PhpWord');
         if (false === $this->tempDocumentFilename) {
